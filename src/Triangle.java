@@ -1,17 +1,20 @@
-import javax.management.ValueExp;
+public class Triangle extends Shape{
+    private int sideA,sideB,getSideC;
 
-public class Rectangle extends Shape{
-
-    private int sideA , sideB;
-
-    public static String class_name = "Rectangle";
-
-    public Rectangle(Point location, int sideA, int sideB) {
+    public Triangle(Point location, int sideA, int sideB, int getSideC) {
         super(location);
         setSideA(sideA);
         setSideB(sideB);
+        setGetSideC(getSideC);
     }
 
+    public int getGetSideC() {
+        return getSideC;
+    }
+
+    public void setGetSideC(int getSideC) {
+        this.getSideC = getSideC;
+    }
 
     public int getSideA() {
         return sideA;
@@ -39,11 +42,12 @@ public class Rectangle extends Shape{
     }
     @Override
     public double perimeter(){
-        return 2 * (sideA + sideB);
+        return getSideC +sideA + sideB;
     }
     @Override
     public double area(){
-        return sideA * sideB;
+        int i = (sideA * sideB)/2;
+        return i;
     }
 
     @Override
